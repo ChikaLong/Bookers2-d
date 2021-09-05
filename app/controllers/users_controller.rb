@@ -15,6 +15,7 @@ class UsersController < ApplicationController
       render :edit
     else
       redirect_to user_path(@user.id)
+    end
   end
 
   def update
