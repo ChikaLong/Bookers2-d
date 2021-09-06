@@ -1,13 +1,41 @@
-<h2>User info</h2>
-<%= form_with model:@user,local:true do |f| %>
- <label for="user_name">Name</label>
- <%= f.text_field :name %>
+<div class="container">
+ <div class="row">
+  <div class="col-sm-12 col-md-8 col-log-5 px-5 px-am-0 mx-auto">
+   <h2>User info</h2>
+   
+   <!--エラー文-->
+   <% if @user.errors.any? %>
+   <div id="error_explanation">
+    <h2><%= @user.errors.count %>errors prohibited this obj from being saved:</h2>
+    <ul>
+     <% @user.errors.full_messages.each do |message| %>
+       <li><%= message %></li>
+     <% end %>
+    </ul> 
+   </div>  
+   <% end %>
+   
+   <%= form_with model:@user,local:true do |f| %>
+   
+    <div class="form-group">
+     <%= f.label :name %>
+     <%= f.text_field :name,class: "form-control name" %>
+    </div> 
+    
+    <div class="form-group"> 
+     <%= f.label :image %>
+     <%= f.attachment_field :profile_image,class: "form-control-file user_image" %>
+    </div> 
  
- <label for="inputImage">Image</label>
- <%= f.attachment_field :profile_image,placeholder:"ファイルを選択" %>
+    <div class="form-group">
+     <%= f.label :introduction %>
+     <%= f.text_area :introduction,class: "form-control introduction" %>
+    </div> 
  
- <label for="user_introduction">Introduction</label>
- <%= f.text_area :Introduction %>
- 
- <%= f.submit 'Update User' %>
-<%end%> 
+    <div class="form-group">
+     <%= f.submit 'Update User',class: "btn btn-secondary" %>
+    </div> 
+   <%end%> 
+  </div>
+ </div>
+</div>
