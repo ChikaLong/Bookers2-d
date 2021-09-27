@@ -27,12 +27,14 @@
               <%end%>
             </td>
             <td><%= @book.body %></td>
+            <td><%= @book.category %></td>
+
+            <td><%= render 'books/rate', book: @book %></td>
+
             <td id="favorites_buttons_<%= @book.id %>">
               <%= render 'favorites/favorite', book: @book %>
             </td>
             <td id="comment_count">コメント数:<%= @book.book_comments.count %></td>
-
-            <td><%= render 'books/rate', book: @book %></td>
 
             <% if @book.user.id == current_user.id %>
              <td><%= link_to "Edit",edit_book_path(@book), class: "btn btn-sm btn-success edit_book" %></td>

@@ -17,6 +17,11 @@
           <%= f.label :opinion %>
           <%= f.text_area :body, class: "form-control book_body" %>
         </div>
+        
+        <div class="form-group">
+          <%= f.label :Category %>
+          <%= f.text_field :category, class: "form-control book_category" %>
+         </div>
 
         <%= render 'books/rate', book: @book %>
 

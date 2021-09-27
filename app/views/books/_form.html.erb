@@ -1,0 +1,8 @@
+<div>
+  <% if user_signed_in? %>
+    <%= form_with url:search_book_path, method: :get, local: true do |f|  %>
+      <%= f.text_field 'keyword', placeholder: 'カテゴリー検索' %>
+      <%= f.submit '検索', class: 'btn btn-sm btn-primary' %>
+    <%end%>
+  <%end%>
+</div>
