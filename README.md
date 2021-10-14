@@ -1,24 +1,7 @@
-# README
+# DMMWEBCAMPの応用課題d(Bookers2の機能拡張)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+**レビュー系の機能追加**
+* 投稿時の5段階評価機能(投稿後変更不可)
+* 投稿を新着順、評価順に並べる機能
+* 投稿時のカテゴリタグ追加機能
+* カテゴリタグでの検索機能
